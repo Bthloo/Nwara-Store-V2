@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:nwara_strore_sql/core/general_components/color_helper.dart';
 
 typedef MyValidator = String? Function(String?);
 typedef OnChange = void Function(String?);
@@ -50,13 +51,18 @@ class CustomFormField extends StatelessWidget {
         decoration: InputDecoration(
             suffixIcon: suffix,
             prefixIcon: prefix,
-            //labelText: 'Email',
             labelText: hintText,
-            //suffixIcon: ,
             labelStyle:  const TextStyle(color: Color(0xffEDEDED)),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+            ),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide:  BorderSide(color: ColorHelper.darkColor)
+            ),
             fillColor: const Color(0xff444444),
-            filled: true),
+            filled: true
+        ),
       ),
     );
   }

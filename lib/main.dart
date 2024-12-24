@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nwara_strore_sql/features/home_screen/view/pages/home_screen.dart';
+import 'package:nwara_strore_sql/features/item_details_screen/view/pages/item_details_screen.dart';
 
 import 'core/general_components/theme_data.dart';
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         initialRoute: HomeScreen.routeName,
         routes: {
           HomeScreen.routeName: (_) => const HomeScreen(),
+          ItemDetailsScreen.routeName: (_) =>  ItemDetailsScreen(),
         },
       ),
     );

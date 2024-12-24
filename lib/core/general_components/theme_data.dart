@@ -26,17 +26,12 @@ ThemeData themeData(BuildContext context) {
     ),
     fontFamily: "Cairo",
     elevatedButtonTheme:  ElevatedButtonThemeData(
-
-      style: ButtonStyle(
-        backgroundColor: const WidgetStatePropertyAll(
-            ColorHelper.mainColor
-        ),
-        shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(
+      style: ElevatedButton.styleFrom(
+       overlayColor:ColorHelper.darkColor,
+        backgroundColor: ColorHelper.mainColor,
+        shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(13)
-            )
-
-      ),
+            ),
     ),
     ),
     bottomSheetTheme: const BottomSheetThemeData(
@@ -55,7 +50,7 @@ ThemeData themeData(BuildContext context) {
             TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
-                color: ColorHelper.darkColor.withOpacity(.85)
+                color: ColorHelper.darkColor
             )
         )
     ),
@@ -73,7 +68,12 @@ ThemeData themeData(BuildContext context) {
         )
     ),
     scaffoldBackgroundColor: ColorHelper.darkColor,
-    colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(100, 255,191,82)),
+    colorScheme: ColorScheme.dark(
+      primary: ColorHelper.mainColor,
+      secondary: ColorHelper.darkColor,
+
+    ),
+    //colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(100, 255,191,82),),
     useMaterial3: true,
   );
 }
