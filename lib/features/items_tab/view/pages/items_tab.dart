@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nwara_strore_sql/core/general_components/color_helper.dart';
+import 'package:nwara_strore_sql/core/general_components/dialog.dart';
+import 'package:nwara_strore_sql/features/item_details_screen/view/pages/item_details_screen.dart';
 import 'package:nwara_strore_sql/features/items_tab/view/components/add_item_bottom_sheet.dart';
 import 'package:nwara_strore_sql/features/items_tab/view/components/item_widget.dart';
 import 'package:nwara_strore_sql/features/items_tab/viewmodel/get_items_viewmodel/get_items_viewmodel_cubit.dart';
@@ -63,7 +65,7 @@ class ItemsTab extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.pushNamed(
                                       context,
-                                      "details-screen",
+                                      ItemDetailsScreen.routeName,
                                       arguments: state.items[index]
                                     ).then((value) {
                                       if(context.mounted){

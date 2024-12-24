@@ -4,15 +4,12 @@ class ItemModel{
   final num originalPrice;
   final num sellPrice;
    int quantity;
-   //final String wareHouse;
-
   ItemModel({
     required this.name,
     required this.originalPrice,
     required this.sellPrice,
     required this.quantity,
     required this.id,
-   // required this.wareHouse
   });
 
   factory ItemModel.fromJson(Map<String, dynamic> json) {
@@ -22,18 +19,6 @@ class ItemModel{
       sellPrice: json['sellPrice'],
       quantity: json['quantity'],
       id: json['id'],
-     // wareHouse: json['wareHouse']
     );
   }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'name': name,
-      'originalPrice': originalPrice,
-      'sellPrice': sellPrice,
-      'quantity': quantity,
-    };
-  }
-
 }

@@ -13,11 +13,8 @@ class GetItemsCubit extends Cubit<GetItemsState> {
   getItems()async{
     emit(GetItemsLoading());
     try{
-      final List<Map<String, dynamic>> jsonData  = await db.readData(
-          query: '''
-          SELECT * FROM `items`
-          '''
-      );
+
+      final List<Map<String, dynamic>> jsonData =await db.readData(tableName: "items");
       List<ItemModel> items = jsonData.map((e) => ItemModel.fromJson(e)).toList();
       emit(GetItemsSuccess(items));
     }catch(e){

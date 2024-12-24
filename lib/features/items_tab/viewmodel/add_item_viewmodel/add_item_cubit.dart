@@ -35,11 +35,6 @@ class AddItemCubit extends Cubit<AddItemState> {
         // INSERT INTO items (name,quantity,originalPrice,sellPrice) VALUES ('${nameController.text}','${quantityController.text}','${originalPriceController.text}','${sellPriceController.text}')
         // ''');
         emit(AddItemSuccess("تم الاضافه بنجاح"));
-
-
-
-
-
       }catch(e){
         emit(AddItemFailed("Error : ${e.toString()}"));
         debugPrint("Error : ${e.toString()}");
@@ -47,5 +42,13 @@ class AddItemCubit extends Cubit<AddItemState> {
     }
 
 
+  }
+  @override
+  Future<void> close() {
+    nameController.dispose();
+    quantityController.dispose();
+    originalPriceController.dispose();
+    sellPriceController.dispose();
+    return super.close();
   }
 }

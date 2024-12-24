@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nwara_strore_sql/core/general_components/build_show_toast.dart';
+import 'package:nwara_strore_sql/core/general_components/color_helper.dart';
 import 'package:nwara_strore_sql/core/general_components/custom_form_field.dart';
 
 import '../../viewmodel/add_item_viewmodel/add_item_cubit.dart';
@@ -27,10 +30,7 @@ class AddItemBottomSheet extends StatelessWidget {
       showDragHandle: false,
         enableDrag: false,
         onClosing: () {
-          context.read<AddItemCubit>().nameController.clear();
-          context.read<AddItemCubit>().quantityController.clear();
-          context.read<AddItemCubit>().originalPriceController.clear();
-          context.read<AddItemCubit>().sellPriceController.clear();
+
         },
         builder: (context) {
           return SingleChildScrollView(
@@ -129,7 +129,7 @@ class AddItemBottomSheet extends StatelessWidget {
                                     padding: EdgeInsets.all(8.0),
                                     child: Text(
                                       "اضافه",
-                                      style: TextStyle(color: Colors.white, fontSize: 20),
+                                      style: TextStyle( fontSize: 20 ),
                                     ),
                                   )),
                             );

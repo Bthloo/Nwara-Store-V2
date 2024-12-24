@@ -190,7 +190,7 @@ class ItemDetailsScreen extends StatelessWidget {
               child: Text(
                 "حفظ التغييرات",
                 style: TextStyle(
-                    color: Colors.white, fontSize: 20),
+                    fontSize: 20),
               ),
             )),
       );

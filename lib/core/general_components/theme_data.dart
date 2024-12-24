@@ -28,6 +28,7 @@ ThemeData themeData(BuildContext context) {
     elevatedButtonTheme:  ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
        overlayColor:ColorHelper.darkColor,
+        foregroundColor: ColorHelper.darkColor,
         backgroundColor: ColorHelper.mainColor,
         shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(13)
